@@ -1,7 +1,9 @@
 <div>
     <header>{{title}}</header>
     <div>
-        <app-accountdetails></app-accountdetails>
+        <div>
+            <p-menubar [model]="items"></p-menubar>
+        </div>
     </div>
-        <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

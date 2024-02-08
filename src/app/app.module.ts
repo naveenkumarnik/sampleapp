@@ -10,6 +10,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { TransactiondetailsgridComponent } from '../transactiondetailsgrid/transactiondetailsgrid.component';
 import { SplitterModule } from 'primeng/splitter';
 import { AgGridModule } from 'ag-grid-angular';
+import { ChartModule } from 'primeng/chart';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AgGridModule } from 'ag-grid-angular';
     ToolbarModule ,
     MenubarModule,
     SplitterModule,
-    AgGridModule
+    AgGridModule,
+    ChartModule
   ],
   providers: [
     provideClientHydration()

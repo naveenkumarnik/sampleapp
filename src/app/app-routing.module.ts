@@ -4,9 +4,8 @@ import { TransactiondetailsgridComponent } from '../transactiondetailsgrid/trans
 import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
 
 const routes: Routes = [
-  { path: 'transactiondetailsgrid', component: TransactiondetailsgridComponent},
   { path: 'accountdetails', component: AccountdetailsComponent },
-
+  { path: 'transactiondetailsgrid', component: TransactiondetailsgridComponent},
 ];
 
 @NgModule({
