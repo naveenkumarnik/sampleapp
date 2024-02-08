@@ -3,14 +3,29 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarModule } from 'primeng/toolbar';
+import { MenubarModule } from 'primeng/menubar';
+import { TransactiondetailsgridComponent } from '../transactiondetailsgrid/transactiondetailsgrid.component';
+import { SplitterModule } from 'primeng/splitter';
+import { AgGridModule } from 'ag-grid-angular';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccountdetailsComponent,
+    TransactiondetailsgridComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToolbarModule ,
+    MenubarModule,
+    SplitterModule,
+    AgGridModule
   ],
   providers: [
     provideClientHydration()
