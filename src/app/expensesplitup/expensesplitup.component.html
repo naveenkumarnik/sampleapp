@@ -1,3 +1,19 @@
-<div class="card flex justify-content-center">
-    <p-chart type="doughnut" width="400" height="400" [data]="data" [options]="options"></p-chart>
+
+
+<div style="margin-top: 40px;">
+    <p-splitter [panelSizes]="[50, 50]" [style]="{ height: '550px'}" styleClass="mb-5">
+        <ng-template pTemplate>
+            <div class="card flex justify-content-center" style="width: 500px;">
+                <p-chart type="doughnut" width="400" height="400" [data]="data" [options]="options"></p-chart>
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+            <h2 style="margin-right: 10px; color: #1E86B0;"><strong>Category Detail</strong></h2>
+            <div style="margin-top: 65px; margin-left: -180px;">
+                <ag-grid-angular [rowData]="this.rowData | ngrxPush" [columnDefs]="columnDefs" [class]="themeClass"
+                [gridOptions]="gridOptions" style="width: 100%; height: 100%">
+            </ag-grid-angular>
+            </div>
+        </ng-template>
+    </p-splitter>
 </div>
