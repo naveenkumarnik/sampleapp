@@ -15,44 +15,57 @@ export class AccountdetailsComponent implements OnInit {
             datasets: [
                 {
                     label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: [1000,2000,786,3000],
                     datalabels: {
-                      align: 'end',
-                      anchor: 'start'
-                    }
+                        align: 'end',
+                        anchor: 'start'
+                    },
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'
+                      ],
+                      borderWidth: 1
                 },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
+               
+            ],
+            
         }
-    
+
         this.options = {
-            title: {
-                display: true,
-                text: 'My Title',
-                fontSize: 16
-            },
-            legend: {
-                position: 'bottom'
+            tooltips: {
+                mode: 'index',
+                intersect: false
             },
             plugins: {
-                        datalabels: {
-                            color: 'white',
-                            display: function(context: any) {
-                                return context.dataset.data[context.dataIndex] > 15;
-                            },
-                            font: {
-                                weight: 'bold'
-                            },
-                            formatter: Math.round
-                        }
-                    }
+                datalabels: {
+                    display: function (context: any) {
+                        console.log(context.dataset.data[context.dataIndex])
+                        return context.dataset.data[context.dataIndex] > 50;
+                    },
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: Math.round
+                }
+            }
         };
     }
-    reinit() {
-        this.chart.reinit();
-      }
 
+    onDataSelect(event: any){
+        console.log(event);
+    }
 }

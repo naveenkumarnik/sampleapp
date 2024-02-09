@@ -1,3 +1,4 @@
 <p>Account Details</p>
-<p-chart #chart type="bar" [data]="data" [options]="options"></p-chart>
-<button (click)="reinit()">Test</button>
+<div style="width:'550px'; height:'550';">
+    <p-chart #chart type="bar" width="550px" height="550" [data]="data" [options]="options" (onDataSelect)="onDataSelect($event)"></p-chart>
+</div>

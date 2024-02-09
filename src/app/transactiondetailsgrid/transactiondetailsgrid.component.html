@@ -1,0 +1,17 @@
+<div style="margin-top: 40px;">
+    <p-splitter [panelSizes]="[65, 35]" [style]="{ height: '550px'}" styleClass="mb-5">
+        <ng-template pTemplate>
+            <ag-grid-angular [rowData]="this.rowData | ngrxPush" [columnDefs]="columnDefs" [class]="themeClass"
+                [gridOptions]="gridOptions" style="width: 100%; height: 100%">
+            </ag-grid-angular>
+        </ng-template>
+        <ng-template pTemplate>
+            <h2 style="margin-right: 10px; color: #1E86B0;"><strong>Transaction Detail</strong></h2>
+            <div style="margin-top: 65px; margin-left: -180px;">
+                <form [formGroup]="form">
+                    <formly-form [model]="model" [fields]="fields" [form]="form"></formly-form>
+                </form>
+            </div>
+        </ng-template>
+    </p-splitter>
+</div>
